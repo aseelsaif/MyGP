@@ -1,3 +1,8 @@
 "DEAL_ID","FROM_CURRENCY","TO_CURRENCY","TIMESTAMP","AMOUNT"
 "11","KSA","UAS","Mar 13, 2022","333"
 "77","KSA","UAE","Mar 13, 2022","333"
+"1","as","as","Mar 14, 2022","2"
+"77777","USD","JOD","Mar 15, 2022","88888"
+"8887","USD","JOD","Mar 15, 2022","443"
+"9233","KSA","JOR","Mar 15, 2022","33"
+"42","USD","JOD","Mar 15, 2022","77"

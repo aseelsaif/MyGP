@@ -168,8 +168,18 @@ class DealDetailForm extends JFrame	implements ActionListener {
 				JOptionPane.showMessageDialog(null, "Some fields are invalid !!");
 			}
 			else
-				
+			
 			{
+				if(!isIDUnique(Integer.parseInt(tuniqueID.getText().trim())))
+				{
+					JOptionPane.showMessageDialog(null, "The ID is already used !!\n please enter a new one..");
+				}
+				else if(!isCurrencyCodeValid())
+				{
+					JOptionPane.showMessageDialog(null, "Please enter a valid currency code !!");
+				}
+				else
+				{
 				int res = JOptionPane.showConfirmDialog(this, "Are you sure you want to submit?", "submit?", JOptionPane.YES_NO_OPTION);
 	            if ( res == 0 ) {
 	            	logger.debug("Adding values to CSV...");
@@ -177,7 +187,7 @@ class DealDetailForm extends JFrame	implements ActionListener {
 	            	logger.debug("Close the form...");
 	                this.dispose();
 	            }
-				
+				}
 			}
 	}
 		
@@ -248,7 +258,21 @@ class DealDetailForm extends JFrame	implements ActionListener {
 		return false;
 	}
 	
-
-	
+	 protected boolean isIDUnique(int id )
+	 {
+		return MongoDBConnection.isIDUnique(id);
+	 }
+	public boolean isCurrencyCodeValid()
+	{
+		boolean validCurrencyCode = false;
+		String toCurrency = torderingCurrency.getText().trim();
+		String fromCurrency = ttoCurrency.getText().trim();
+		if ((CurrncyCodeEnum.lookupByName(toCurrency) != null) && (CurrncyCodeEnum.lookupByName(fromCurrency) != null))
+		{
+			validCurrencyCode = true;
+		}
+		return validCurrencyCode;
+		
+	}
 }
 

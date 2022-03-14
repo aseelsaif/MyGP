@@ -1,6 +1,5 @@
 package DeailDetail.DealDetailsFX;
 
-import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,7 +21,7 @@ public class main {
           System.out.println(key + "=" + mapDetails.get(key));}
 		
 		MongoDBConnection passDetailToDB = new MongoDBConnection();
-		passDetailToDB.connectToDB(mapDetails);
+		passDetailToDB.insertToDB(mapDetails);
 	
 		}
 }

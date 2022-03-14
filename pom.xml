@@ -20,11 +20,21 @@
 
   <dependencies>
   
+  
   <dependency>
 	<groupId>org.mongodb</groupId>
 	<artifactId>mongo-java-driver</artifactId>
 	<version>3.9.1</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/com.google.common/google-collect -->
+
+<dependency>
+	<groupId>com.google.guava</groupId>
+	<artifactId>guava</artifactId>
+	<version>r07</version>
+</dependency>
+<!-- Thanks for using https://jar-download.com -->
+
   <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
 <dependency>
     <groupId>org.mongodb</groupId>
